@@ -35,7 +35,7 @@ from logicmonitor_data_sdk.models import DataSource, \
 configuration = logicmonitor_data_sdk.Configuration(company='lmcameroncompton',
                                                     id='x23Qv9Qz8Xbu2RL36ij9',
                                                     key='lma_83y^^)5~He2yC^P5u7ha)j5[8R=I%YPWD]6jGH_^_899[cBBx^26233_hQk_LYTRiODIwMzMtZjYyZC00MjAxLWJhZTgtMmI3NTdiYjNlMTZkL43DKZk')
-debug = TRUE
+debug = FALSE
 
 conn = jaydebeapi.connect("com.mysql.cj.jdbc.Driver","jdbc:mysql://localhost:3306/testdb2",["root", "football12"], "C:\\Users\\Administrator\\Downloads\\New folder\\mysql-connector-java-8.0.30.jar")
 #conn=jaydebeapi.connect("org.mariadb.jdbc.Driver","jdbc:mariadb://localhost:3306/testdb",["root", "football12"],"C:\\Users\\Administrator\\Downloads\\New folder\\mariadb-java-client-3.0.7.jar")
@@ -70,10 +70,10 @@ for i in range(1, len(data)):
         cleanedName=cleanedName[0:254]
     for character in disallowed_characters:
 	    cleanedName = cleanedName.replace(character, "")
-    instancesListFromQuery.append(instanceData(cleanedName, data[i][10]))
+    instancesListFromQuery.append(instanceData(cleanedName, data[i][9]))
 
 
-print('len instancesfromlist',len(instancesListFromQuery))
+#print('len instancesfromlist',len(instancesListFromQuery))
 if(debug):
     for x in range(len(instancesListFromQuery)):
        
